@@ -10,10 +10,13 @@
 		navLinks.forEach((link) => {
 			link.addEventListener("click", (event) => {
 				const targetPage = link.getAttribute("data-target");
+				//It validate is the target page match with pageRoutes or Not
 				if (!targetPage || !pageRoutes[targetPage]) {
 					return;
 				}
-				event.preventDefault();
+				event.preventDefault();  
+				//Built-in browser that no need to define and used to prevent the default action.
+				//It means the browser not directly navigate according to the href attribute, it strictly follow the JavaScript file.
 				window.location.href = pageRoutes[targetPage];
 			});
 		});
