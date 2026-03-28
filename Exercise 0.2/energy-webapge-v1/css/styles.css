@@ -1,8 +1,15 @@
+/* Colour that I extract from the image, we use it for the main colour palette of the webpage:
+#f7a327 -dark yellow
+#81663e -brown 
+#fbe79c -light yellow */
+
+
+/* Replace naming since the previous one is not clear enough */
 :root {
-	--sand: #F8E8A5;
-	--gold: #EBA746;
-	--earth: #7D6744;
-	--ink: #2C2418;
+	--yellow: #F8E8A5;
+	--dark_yellow: #EBA746;
+	--brown: #7D6744;
+	--black: #2C2418;
 	--cream: #FFF8DE;
 	--panel: #FFF3CC;
 	--surface: #FFFFFF;
@@ -15,7 +22,7 @@
 
 body {
 	margin: 0;
-	color: var(--ink);
+	color: var(--black);
 	font-family: "Trebuchet MS", "Verdana", sans-serif;
 	line-height: 1.6;
 	background:
@@ -71,7 +78,7 @@ h2 {
 }
 
 .top-nav {
-	flex-shrink: 0;
+	flex-shrblack: 0;
 }
 
 .nav-menu {
@@ -82,9 +89,9 @@ h2 {
 	padding: 0;
 }
 
-.nav-link {
+.nav-lblack {
 	display: inline-block;
-	color: var(--ink);
+	color: var(--black);
 	text-decoration: none;
 	font-weight: 700;
 	padding: 0.45rem 0.8rem;
@@ -93,17 +100,17 @@ h2 {
 	transition: all 0.2s ease;
 }
 
-.nav-link:hover,
-.nav-link:focus-visible {
-	background-color: var(--sand);
-	border-color: var(--earth);
+.nav-lblack:hover,
+.nav-lblack:focus-visible {
+	background-color: var(--yellow);
+	border-color: var(--brown);
 	transform: translateY(-1px);
 	outline: none;
 }
 
-.nav-link.is-active {
-	background-color: var(--gold);
-	border-color: var(--earth);
+.nav-lblack.is-active {
+	background-color: var(--dark_yellow);
+	border-color: var(--brown);
 	box-shadow: inset 0 -2px 0 rgba(44, 36, 24, 0.35);
 }
 
@@ -133,7 +140,7 @@ h2 {
 	text-transform: uppercase;
 	letter-spacing: 0.09em;
 	font-weight: 800;
-	color: var(--earth);
+	color: var(--brown);
 }
 
 .content-grid {

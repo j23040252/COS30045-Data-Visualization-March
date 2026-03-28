@@ -31,37 +31,24 @@
 	}
 
 	function setActiveNavigation() {
-		const currentPage = document.body.getAttribute("data-page");
+		//At the three HTML file, we specify a variable named data-page that help the JavaScript to know any of them is the current page.
+		const currentPage = document.body.getAttribute("data-page");  
 		const navLinks = document.querySelectorAll(".nav-link");
 
 		navLinks.forEach((link) => {
 			const isCurrent = link.getAttribute("data-target") === currentPage;
-			link.classList.toggle("is-active", isCurrent);
-
-			if (isCurrent) {
-				link.setAttribute("aria-current", "page");
-			} else {
-				link.removeAttribute("aria-current");
-			}
+			link.classList.toggle("is-active", isCurrent); // Add class is-active to enable the CSS style (Highlight current page in the navigation bar)
 		});
 	}
 
 	function setFooterYear() {
 		const yearNode = document.getElementById("current-year");
 		if (yearNode) {
-			yearNode.textContent = String(new Date().getFullYear());
+			yearNode.textContent = String(new Date().getFullYear()); //Get a timestamp, Retrieve the Current Year from timestamp, Convert to String)
 		}
 	}
 
-	function escapeHtml(value) {
-		return String(value)
-			.replace(/&/g, "&amp;")
-			.replace(/</g, "&lt;")
-			.replace(/>/g, "&gt;")
-			.replace(/\"/g, "&quot;")
-			.replace(/'/g, "&#39;");
-	}
-
+	//Run the above functions after the Browser fully load the HTML content
 	document.addEventListener("DOMContentLoaded", () => {
 		setupNavigation();
 		setActiveNavigation();

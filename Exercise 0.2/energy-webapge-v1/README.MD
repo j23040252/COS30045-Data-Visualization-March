@@ -22,6 +22,7 @@ This website was built for Exercise 0.2 and contains three pages:
 - Used GitHub Copilot to generate the initial page structure for each HTML file.
 - Used Copilot to draft JavaScript for active-menu highlighting and page routing behavior.
 - Used Copilot to draft CSS sections for responsive layout, hover feedback, and table styling.
+- Used Github Copilot to help me to understand the generated code and remove unnessary code.
 
 ## Reflection
 By using Github Copilot, it helped me to speed up the building of a simple website. For example, it suggests me the CSS code that be used in this website because I am not familiar with CSS. Once the code was generated, I asked the AI to explain the feature and how to use it smarter if it is needed in the future. Besides that, it also provides me starter JavaScript functions that I could then adjust for the exact requirement wording. However, I still needed to check every suggestion carefully to ensure it not generate any code that make the website become worst. Overall, Githuv Copilot made the process faster, but I had to understand and refine the code to make sure it matched the assessment criteria. 
