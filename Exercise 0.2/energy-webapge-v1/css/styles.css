@@ -10,10 +10,10 @@
 	/* the colour get from the image are not that suitable as a background colour, so I adjust the transparency */
 	--yellow-bg: #FBE79C96;
 	--dark-yellow: #EBA746;
+	--dark-yellow-bg: #eba646a0;
 	--brown: #7D6744;
 	--black: #2C2418;
 	--white: #FFFFFF;
-	--shadow: rgba(44, 36, 24, 0.14);
 }
 
 /* make the width sizing include the padding and border */
@@ -105,72 +105,71 @@ h2 {
 .nav-link.is-active {
 	background-color: var(--dark-yellow);
 	border-color: var(--brown);
-	box-shadow: inset 0 -2px 0 var(--brown);
+	box-shadow: inset 0 -2px 0 var(--brown); /* add a shadow at the bottom of nav link for current active page */
 }
 
 .page-content {
-	max-width: 1080px;
-	margin: 0 auto;
+	max-width: 1080px; /*set a max width for the content */
+	margin: 0 auto; /* centre the content horizontally automatically */
 	padding: 2rem 1rem 2.5rem;
 }
 
 .hero {
 	background: var(--white);
 	border: 1px solid var(--brown);
-	border-radius: 18px;
+	border-radius: 18px; /* Rounds the corners of the card */
 	padding: 1.6rem;
-	box-shadow: 0 14px 28px -20px var(--shadow);
-	margin-bottom: 1.2rem;
-	animation: rise-in 0.55s ease-out;
+	box-shadow: 0 5px 10px var(--brown); /* It add a shadow to the bottom of the card, the 10px controls the blur */
+	animation: rise-in 0.55s ease-out; /* apply custom animation when this element is loaded. ease-out: it start fast and slow down at the end */
 }
 
-.small-hero {
-	margin-bottom: 1rem;
-}
-
-.eyebrow {
-	margin: 0 0 0.6rem;
-	font-size: 0.85rem;
+.eyebrow { /* used for small label as shown in the hero section */
+	margin: 0 0 0.6rem; /* add some space at the bottom of the label */
+	font-size: 0.85rem; /* smaller font size */
 	text-transform: uppercase;
 	letter-spacing: 0.09em;
-	font-weight: 800;
+	font-weight: 800; /* make the text bolder */
 	color: var(--brown);
 }
 
-.content-grid {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 1rem;
-	margin: 1.2rem 0;
+.note-panel {
+    background: var(--dark-yellow-bg);
+    border: 1px solid var(--brown);
+    border-radius: 14px;
+    padding: 1.2rem 1.3rem; /* top and bottom padding : 1.2 rem, the left and right padding : 1.3 rem */
+    margin: 1rem 0 0; /* add some space at the top of the note panel*/
 }
+
 
 .site-footer {
 	text-align: center;
-	padding: 1rem;
+	padding: 1rem;	
 	border-top: 2px solid var(--brown);
 	background-color: var(--yellow);
 	font-size: 0.92rem;
 }
 
-@keyframes rise-in {
+@keyframes rise-in { /*so, it will create a animation that make the element is rising up */
 	from {
-		opacity: 0;
-		transform: translateY(8px);
+		opacity: 0; /* not visible at the beginning*/
+		transform: translateY(8px); /* start point : 8px below the final position */
 	}
 	to {
-		opacity: 1;
-		transform: translateY(0);
+		opacity: 1; 
+		transform: translateY(0); /* final position; */
 	}
 }
 
-@media (max-width: 860px) {
+@media (max-width: 860px) { /*for screen like tablet, it apply the following styles */
 	.site-header {
-		flex-direction: column;
-		align-items: flex-start;
+		flex-direction: row; /* Header element stay left-to-right on tablet */
+		flex-wrap: wrap; /* header content will wrap to the next line if it doesn't fit in one line */
 	}
 
 	.content-grid {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr; 
+		/* Big screen size: 3 columns in one row.
+		Small table: only 1 column per row so nothing falls off.*/
 	}
 }
 
@@ -180,13 +179,6 @@ h2 {
 	}
 
 	.logo-button span {
-		font-size: 0.96rem;
-	}
-
-	.hero,
-	.note-panel,
-	.table-panel,
-	.info-card {
-		border-radius: 12px;
+		font-size: 0.96rem; /* make the logo text smaller on mobile*/
 	}
 }
