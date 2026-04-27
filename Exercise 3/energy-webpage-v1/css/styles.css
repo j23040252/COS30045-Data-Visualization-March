@@ -140,6 +140,24 @@ h2 {
     margin: 1rem 0 0; /* add some space at the top of the note panel*/
 }
 
+.storyboard-card {
+	margin-top: 1.2rem;
+	background: var(--white);
+	border: 1px solid var(--brown);
+	border-radius: 18px;
+	padding: 1.4rem;
+	box-shadow: 0 5px 10px var(--brown);
+	text-align: center;
+}
+
+.storyboard-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0.7rem auto 0;
+	border-radius: 12px;
+}
+
 .site-footer {
 	text-align: center;
 	padding: 1rem;	
