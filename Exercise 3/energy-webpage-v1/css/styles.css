@@ -145,8 +145,8 @@ h2 {
 	background: var(--white);
 	border: 1px solid var(--brown);
 	border-radius: 18px;
-	padding: 1.4rem;
-	box-shadow: 0 5px 10px var(--brown);
+	padding: 1.4rem; /*add some space for the content inside the card */
+	box-shadow: 0 5px 10px var(--brown); /*add shadow to the bottom of the card */
 	text-align: center;
 }
 
@@ -154,8 +154,20 @@ h2 {
 	display: block;
 	width: 100%;
 	height: auto;
-	margin: 0.7rem auto 0;
+	margin: 0.7rem auto 0; /*add space at top, auto make left & right : center, 0 : no margin at the bottom*/
 	border-radius: 12px;
+}
+
+.summary-card {
+	text-align: left;
+}
+
+.summary-card h2 {
+	text-align: center;
+}
+
+.sub-point {
+	margin-left: 2rem; /*add some space from the left side*/ 
 }
 
 .site-footer {
