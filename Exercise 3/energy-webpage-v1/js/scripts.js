@@ -2,7 +2,8 @@
 	const pageRoutes = {
 		home: "index.html",
 		televisions: "televisions.html",
-		about: "about.html"
+		about: "about.html",
+		data_story: "data_story.html"
 	};
 
 	function setupNavigation() {
@@ -31,7 +32,7 @@
 	}
 
 	function setActiveNavigation() {
-		//At the three HTML file, we specify a variable named data-page that help the JavaScript to know any of them is the current page.
+		//At the HTML files, we specify a variable named data-page that help the JavaScript to know any of them is the current page.
 		const currentPage = document.body.getAttribute("data-page");  
 		const navLinks = document.querySelectorAll(".nav-link");
 
