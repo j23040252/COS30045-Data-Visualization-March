@@ -16,7 +16,7 @@
       .pink { fill: #FF69B4; }
       .light-blue { fill: #87CEEB; stroke: #333; stroke-width: 2; }
       .dark-green { fill: #228B22; stroke: #1a6b1a; stroke-width: 1; }
-      .white { fill: #FFFFFF; stroke: #D3D3D3; stroke-width: 1; }
+      .white { fill: #FFFFFF;}
       
       /* STROKE COLORS */
       .orange { stroke: #FFA500; stroke-width: 4; }
@@ -37,18 +37,24 @@
 
   <!-- SUN (Circle) -->
   <g id="sun">
-    <circle class="gold" cx="150" cy="90" r="50"/>
+    <circle class="gold" cx="150" cy="90" r="50"/> <!-- x,y for circle + radius -->
     <!-- Sun rays (Lines) -->
-    <line class="orange" x1="150" y1="10" x2="150" y2="-10" stroke-linecap="round"/>
-    <line class="orange" x1="210" y1="20" x2="225" y2="5" stroke-linecap="round"/>
-    <line class="orange" x1="245" y1="80" x2="265" y2="80" stroke-linecap="round"/>
+    <!-- Cardinal rays: Top, Bottom, Left, Right -->
+    <!--For top and bottom lines, starting point=bottom, ending point=top -->
+    <!--For left and right lines, starting point=right, ending point=left -->
+    <line class="orange" x1="150" y1="30" x2="150" y2="10" stroke-linecap="round"/> 
     <line class="orange" x1="150" y1="150" x2="150" y2="170" stroke-linecap="round"/>
-    <line class="orange" x1="90" y1="20" x2="75" y2="5" stroke-linecap="round"/>
-    <line class="orange" x1="55" y1="80" x2="35" y2="80" stroke-linecap="round"/>
+    <line class="orange" x1="85" y1="90" x2="65" y2="90" stroke-linecap="round"/> 
+    <line class="orange" x1="210" y1="90" x2="230" y2="90" stroke-linecap="round"/>
+    <!-- Diagonal rays: Top-left, Top-right, Bottom-left, Bottom-right -->
+    <line class="orange" x1="100" y1="50" x2="85" y2="35" stroke-linecap="round"/>
+    <line class="orange" x1="200" y1="50" x2="215" y2="35" stroke-linecap="round"/>
+    <line class="orange" x1="100" y1="130" x2="85" y2="145" stroke-linecap="round"/>
+    <line class="orange" x1="200" y1="130" x2="215" y2="145" stroke-linecap="round"/>
   </g>
 
   <!-- CLOUDS (Ellipses) -->
-  <g id="clouds" opacity="0.8">
+  <g id="clouds" opacity="0.8"> <!--opacity : set transparency -->
     <ellipse class="white" cx="800" cy="60" rx="50" ry="30"/>
     <ellipse class="white" cx="840" cy="70" rx="45" ry="25"/>
     <ellipse class="white" cx="760" cy="75" rx="40" ry="20"/>
