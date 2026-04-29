@@ -2,110 +2,116 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="1000" height="800">
   <defs>
     <style>
-      .house-wall { fill: #D2691E; stroke: #8B4513; stroke-width: 3; }
-      .roof { fill: #8B0000; stroke: #5C0000; stroke-width: 2; }
-      .door { fill: #654321; stroke: #3D2817; stroke-width: 2; }
-      .window { fill: #87CEEB; stroke: #333; stroke-width: 2; }
-      .sky-bg { fill: #E0F6FF; }
-      .grass-bg { fill: #90EE90; }
-      .flower-petal { fill: #FF69B4; }
-      .flower-center { fill: #FFD700; }
-      .bush { fill: #228B22; stroke: #1a6b1a; stroke-width: 1; }
-      .path { fill: none; stroke: #D3D3D3; stroke-width: 8; }
-      .label-text { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
-      .title-text { font-family: Arial, sans-serif; font-size: 32px; font-weight: bold; fill: #333; }
+      /* BACKGROUNDS */
+      .sky { fill: #E0F6FF; }
+      .grass { fill: #90EE90; }
+      
+      /* FILL COLORS (reusable) */
+      .gold { fill: #FFD700; }
+      .tan { fill: #D2691E; }
+      .brown { fill: #654321; }
+      .brown-light { fill: #A0522D; }
+      .dark-red { fill: #8B0000; }
+      .red { fill: #FF6347; }
+      .pink { fill: #FF69B4; }
+      .light-blue { fill: #87CEEB; stroke: #333; stroke-width: 2; }
+      .dark-green { fill: #228B22; stroke: #1a6b1a; stroke-width: 1; }
+      .white { fill: #FFFFFF; stroke: #D3D3D3; stroke-width: 1; }
+      
+      /* STROKE COLORS */
+      .orange { stroke: #FFA500; stroke-width: 4; }
+      .brown-stroke { stroke: #654321; stroke-width: 2; }
+      .brown-dark { stroke: #8B4513; stroke-width: 3; }
+      .gray-stroke { stroke: #333; stroke-width: 1; }
+      .gray-path { stroke: #D3D3D3; stroke-width: 8; }
+      
+      /* TEXT */
+      .text { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .title { font-family: Arial, sans-serif; font-size: 32px; font-weight: bold; fill: #333; }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect class="sky-bg" width="1000" height="400"/>
-  <rect class="grass-bg" y="400" width="1000" height="400"/>
+  <rect class="sky" width="1000" height="400"/>
+  <rect class="grass" y="400" width="1000" height="400"/>
 
   <!-- SUN (Circle) -->
   <g id="sun">
-    <circle cx="150" cy="80" r="50" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+    <circle class="gold" cx="150" cy="90" r="50"/>
     <!-- Sun rays (Lines) -->
-    <line x1="150" y1="10" x2="150" y2="-10" stroke="#FFA500" stroke-width="4" stroke-linecap="round"/>
-    <line x1="210" y1="20" x2="225" y2="5" stroke="#FFA500" stroke-width="4" stroke-linecap="round"/>
-    <line x1="245" y1="80" x2="265" y2="80" stroke="#FFA500" stroke-width="4" stroke-linecap="round"/>
-    <line x1="150" y1="150" x2="150" y2="170" stroke="#FFA500" stroke-width="4" stroke-linecap="round"/>
-    <line x1="90" y1="20" x2="75" y2="5" stroke="#FFA500" stroke-width="4" stroke-linecap="round"/>
-    <line x1="55" y1="80" x2="35" y2="80" stroke="#FFA500" stroke-width="4" stroke-linecap="round"/>
+    <line class="orange" x1="150" y1="10" x2="150" y2="-10" stroke-linecap="round"/>
+    <line class="orange" x1="210" y1="20" x2="225" y2="5" stroke-linecap="round"/>
+    <line class="orange" x1="245" y1="80" x2="265" y2="80" stroke-linecap="round"/>
+    <line class="orange" x1="150" y1="150" x2="150" y2="170" stroke-linecap="round"/>
+    <line class="orange" x1="90" y1="20" x2="75" y2="5" stroke-linecap="round"/>
+    <line class="orange" x1="55" y1="80" x2="35" y2="80" stroke-linecap="round"/>
   </g>
 
   <!-- CLOUDS (Ellipses) -->
   <g id="clouds" opacity="0.8">
-    <ellipse cx="800" cy="60" rx="50" ry="30" fill="#FFFFFF" stroke="#D3D3D3" stroke-width="1"/>
-    <ellipse cx="840" cy="70" rx="45" ry="25" fill="#FFFFFF" stroke="#D3D3D3" stroke-width="1"/>
-    <ellipse cx="760" cy="75" rx="40" ry="20" fill="#FFFFFF" stroke="#D3D3D3" stroke-width="1"/>
+    <ellipse class="white" cx="800" cy="60" rx="50" ry="30"/>
+    <ellipse class="white" cx="840" cy="70" rx="45" ry="25"/>
+    <ellipse class="white" cx="760" cy="75" rx="40" ry="20"/>
     
-    <ellipse cx="100" cy="200" rx="55" ry="35" fill="#FFFFFF" stroke="#D3D3D3" stroke-width="1"/>
-    <ellipse cx="150" cy="210" rx="50" ry="30" fill="#FFFFFF" stroke="#D3D3D3" stroke-width="1"/>
+    <ellipse class="white" cx="100" cy="200" rx="55" ry="35"/>
+    <ellipse class="white" cx="150" cy="210" rx="50" ry="30"/>
   </g>
 
   <!-- GARDEN PATHS (Paths) -->
   <g id="garden-paths">
-    <path class="path" d="M 650 400 Q 700 450 750 500 T 850 650"/>
-    <path class="path" d="M 400 500 L 400 700"/>
-    <path class="path" d="M 350 600 L 600 600"/>
+    <path class="gray-path" d="M 650 400 Q 700 450 750 500 T 850 650"/>
+    <path class="gray-path" d="M 400 500 L 400 700"/>
+    <path class="gray-path" d="M 350 600 L 600 600"/>
   </g>
 
   <!-- HOUSE GROUP (Grouping and Transformation) -->
   <g id="house" transform="translate(0, 0)">
     
     <!-- Main House Body (Rectangle) -->
-    <rect class="house-wall" x="250" y="300" width="300" height="200"/>
+    <rect class="tan" x="250" y="300" width="300" height="200"/>
     
     <!-- ROOF (Path - triangle using polygon/path) -->
-    <polygon class="roof" points="250,300 400,150 550,300"/>
-    
-    <!-- Roof edges detail (Lines) -->
-    <line x1="250" y1="300" x2="400" y2="150" stroke="#5C0000" stroke-width="2"/>
-    <line x1="550" y1="300" x2="400" y2="150" stroke="#5C0000" stroke-width="2"/>
-    
+    <polygon class="dark-red" points="250,300 400,150 550,300"/>
+        
     <!-- WINDOWS (Rectangles with Circle details) -->
     <g id="window-left">
-      <rect class="window" x="280" y="330" width="50" height="50"/>
+      <rect class="light-blue" x="280" y="330" width="50" height="50"/>
       <!-- Window panes (Lines) -->
-      <line x1="305" y1="330" x2="305" y2="380" stroke="#333" stroke-width="1"/>
-      <line x1="280" y1="355" x2="330" y2="355" stroke="#333" stroke-width="1"/>
+      <line class="gray-stroke" x1="305" y1="330" x2="305" y2="380"/>
+      <line class="gray-stroke" x1="280" y1="355" x2="330" y2="355"/>
     </g>
     
     <g id="window-right">
-      <rect class="window" x="470" y="330" width="50" height="50"/>
+      <rect class="light-blue" x="470" y="330" width="50" height="50"/>
       <!-- Window panes (Lines) -->
-      <line x1="495" y1="330" x2="495" y2="380" stroke="#333" stroke-width="1"/>
-      <line x1="470" y1="355" x2="520" y2="355" stroke="#333" stroke-width="1"/>
+      <line class="gray-stroke" x1="495" y1="330" x2="495" y2="380"/>
+      <line class="gray-stroke" x1="470" y1="355" x2="520" y2="355"/>
     </g>
     
     <!-- DOOR (Rectangle with Circle knob) -->
-    <rect class="door" x="370" y="400" width="60" height="100"/>
+    <rect class="brown" x="370" y="400" width="60" height="100"/>
     <!-- Door handle (Circle) -->
-    <circle cx="425" cy="450" r="5" fill="#FFD700" stroke="#DAA520" stroke-width="1"/>
-    <!-- Door frame (Lines) -->
-    <line x1="370" y1="400" x2="430" y2="400" stroke="#3D2817" stroke-width="2"/>
-    <line x1="430" y1="400" x2="430" y2="500" stroke="#3D2817" stroke-width="2"/>
-    
+    <circle class="gold" cx="425" cy="450" r="5"/>
+
     <!-- Chimney (Rectangle with Lines) -->
-    <rect x="520" y="200" width="25" height="100" fill="#A0522D" stroke="#654321" stroke-width="2"/>
-    <line x1="520" y1="200" x2="545" y2="200" stroke="#654321" stroke-width="2"/>
+    <rect class="brown-light" x="520" y="200" width="25" height="100"/>
   </g>
 
   <!-- GARDEN - BUSHES (Circles and Ellipses with transform) -->
   <g id="bushes">
     <!-- Left bush -->
     <g transform="translate(150, 550)">
-      <ellipse class="bush" cx="0" cy="0" rx="40" ry="50"/>
-      <circle class="bush" cx="-30" cy="10" r="35"/>
-      <circle class="bush" cx="30" cy="10" r="35"/>
+      <ellipse class="dark-green" cx="0" cy="0" rx="40" ry="50"/>
+      <circle class="dark-green" cx="-30" cy="10" r="35"/>
+      <circle class="dark-green" cx="30" cy="10" r="35"/>
     </g>
     
     <!-- Right bush -->
     <g transform="translate(750, 500)">
-      <circle class="bush" cx="0" cy="0" r="50"/>
-      <circle class="bush" cx="-35" cy="20" r="40"/>
-      <circle class="bush" cx="35" cy="20" r="40"/>
-      <circle class="bush" cx="0" cy="40" r="35"/>
+      <circle class="dark-green" cx="0" cy="0" r="50"/>
+      <circle class="dark-green" cx="-35" cy="20" r="40"/>
+      <circle class="dark-green" cx="35" cy="20" r="40"/>
+      <circle class="dark-green" cx="0" cy="40" r="35"/>
     </g>
   </g>
 
@@ -113,38 +119,38 @@
   <g id="flower-bed-1" transform="translate(100, 650)">
     <!-- Flower 1 with rotation -->
     <g transform="rotate(0)">
-      <circle class="flower-center" cx="0" cy="0" r="8"/>
+      <circle class="gold" cx="0" cy="0" r="8"/>
       <g transform="rotate(0)">
-        <ellipse class="flower-petal" cx="0" cy="-15" rx="8" ry="15"/>
+        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
       </g>
       <g transform="rotate(72)">
-        <ellipse class="flower-petal" cx="0" cy="-15" rx="8" ry="15"/>
+        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
       </g>
       <g transform="rotate(144)">
-        <ellipse class="flower-petal" cx="0" cy="-15" rx="8" ry="15"/>
+        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
       </g>
       <g transform="rotate(216)">
-        <ellipse class="flower-petal" cx="0" cy="-15" rx="8" ry="15"/>
+        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
       </g>
       <g transform="rotate(288)">
-        <ellipse class="flower-petal" cx="0" cy="-15" rx="8" ry="15"/>
+        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
       </g>
     </g>
     
     <!-- Flower 2 with different position -->
     <g transform="translate(60, -20) rotate(45)">
-      <circle class="flower-center" cx="0" cy="0" r="6"/>
+      <circle class="gold" cx="0" cy="0" r="6"/>
       <g transform="rotate(0)">
-        <ellipse class="flower-petal" cx="0" cy="-12" rx="6" ry="12"/>
+        <ellipse class="pink" cx="0" cy="-12" rx="6" ry="12"/>
       </g>
       <g transform="rotate(90)">
-        <ellipse class="flower-petal" cx="0" cy="-12" rx="6" ry="12"/>
+        <ellipse class="pink" cx="0" cy="-12" rx="6" ry="12"/>
       </g>
       <g transform="rotate(180)">
-        <ellipse class="flower-petal" cx="0" cy="-12" rx="6" ry="12"/>
+        <ellipse class="pink" cx="0" cy="-12" rx="6" ry="12"/>
       </g>
       <g transform="rotate(270)">
-        <ellipse class="flower-petal" cx="0" cy="-12" rx="6" ry="12"/>
+        <ellipse class="pink" cx="0" cy="-12" rx="6" ry="12"/>
       </g>
     </g>
   </g>
@@ -153,81 +159,81 @@
   <g id="flower-bed-2" transform="translate(850, 680)">
     <!-- Flower 1 -->
     <g transform="rotate(30)">
-      <circle class="flower-center" cx="0" cy="0" r="7"/>
+      <circle class="gold" cx="0" cy="0" r="7"/>
       <g transform="rotate(0)">
-        <ellipse class="flower-petal" cx="0" cy="-14" rx="7" ry="14"/>
+        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
       </g>
       <g transform="rotate(60)">
-        <ellipse class="flower-petal" cx="0" cy="-14" rx="7" ry="14"/>
+        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
       </g>
       <g transform="rotate(120)">
-        <ellipse class="flower-petal" cx="0" cy="-14" rx="7" ry="14"/>
+        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
       </g>
       <g transform="rotate(180)">
-        <ellipse class="flower-petal" cx="0" cy="-14" rx="7" ry="14"/>
+        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
       </g>
       <g transform="rotate(240)">
-        <ellipse class="flower-petal" cx="0" cy="-14" rx="7" ry="14"/>
+        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
       </g>
       <g transform="rotate(300)">
-        <ellipse class="flower-petal" cx="0" cy="-14" rx="7" ry="14"/>
+        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
       </g>
     </g>
     
     <!-- Flower 2 -->
     <g transform="translate(-50, 30)">
-      <circle class="flower-center" cx="0" cy="0" r="6" fill="#FF6347"/>
+      <circle class="red" cx="0" cy="0" r="6"/>
       <g transform="rotate(0)">
-        <ellipse class="flower-petal" cx="0" cy="-13" rx="6" ry="13" fill="#FF1493"/>
+        <ellipse class="pink" cx="0" cy="-13" rx="6" ry="13"/>
       </g>
       <g transform="rotate(72)">
-        <ellipse class="flower-petal" cx="0" cy="-13" rx="6" ry="13" fill="#FF1493"/>
+        <ellipse class="pink" cx="0" cy="-13" rx="6" ry="13"/>
       </g>
       <g transform="rotate(144)">
-        <ellipse class="flower-petal" cx="0" cy="-13" rx="6" ry="13" fill="#FF1493"/>
+        <ellipse class="pink" cx="0" cy="-13" rx="6" ry="13"/>
       </g>
       <g transform="rotate(216)">
-        <ellipse class="flower-petal" cx="0" cy="-13" rx="6" ry="13" fill="#FF1493"/>
+        <ellipse class="pink" cx="0" cy="-13" rx="6" ry="13"/>
       </g>
       <g transform="rotate(288)">
-        <ellipse class="flower-petal" cx="0" cy="-13" rx="6" ry="13" fill="#FF1493"/>
+        <ellipse class="pink" cx="0" cy="-13" rx="6" ry="13"/>
       </g>
     </g>
   </g>
 
   <!-- DECORATIVE ELEMENTS - Fence (Lines) -->
   <g id="fence">
-    <line x1="50" y1="420" x2="900" y2="420" stroke="#8B4513" stroke-width="3"/>
+    <line class="brown-dark" x1="50" y1="420" x2="900" y2="420"/>
     <!-- Fence posts -->
-    <line x1="100" y1="420" x2="100" y2="460" stroke="#654321" stroke-width="2"/>
-    <line x1="200" y1="420" x2="200" y2="460" stroke="#654321" stroke-width="2"/>
-    <line x1="300" y1="420" x2="300" y2="460" stroke="#654321" stroke-width="2"/>
-    <line x1="600" y1="420" x2="600" y2="460" stroke="#654321" stroke-width="2"/>
-    <line x1="750" y1="420" x2="750" y2="460" stroke="#654321" stroke-width="2"/>
-    <line x1="850" y1="420" x2="850" y2="460" stroke="#654321" stroke-width="2"/>
+    <line class="brown-stroke" x1="100" y1="420" x2="100" y2="460"/>
+    <line class="brown-stroke" x1="200" y1="420" x2="200" y2="460"/>
+    <line class="brown-stroke" x1="300" y1="420" x2="300" y2="460"/>
+    <line class="brown-stroke" x1="600" y1="420" x2="600" y2="460"/>
+    <line class="brown-stroke" x1="750" y1="420" x2="750" y2="460"/>
+    <line class="brown-stroke" x1="850" y1="420" x2="850" y2="460"/>
   </g>
 
   <!-- TEXT LABELS -->
   <g id="labels">
     <!-- Title -->
-    <text class="title-text" x="500" y="40" text-anchor="middle" fill="#333">
+    <text class="title" x="500" y="40" text-anchor="middle">
       House and Garden
     </text>
     
     <!-- Element labels -->
-    <text class="label-text" x="120" y="120" fill="#333" font-size="20">Sun</text>
-    <text class="label-text" x="780" y="130" fill="#333" font-size="20">Clouds</text>
+    <text class="text" x="120" y="120" font-size="20">Sun</text>
+    <text class="text" x="780" y="130" font-size="20">Clouds</text>
     
-    <text class="label-text" x="400" y="280" text-anchor="middle" fill="#333" font-size="20">Roof</text>
-    <text class="label-text" x="350" y="360" fill="#333" font-size="16">Windows</text>
-    <text class="label-text" x="410" y="540" text-anchor="middle" fill="#333" font-size="16">Door</text>
-    <text class="label-text" x="555" y="160" fill="#333" font-size="14">Chimney</text>
+    <text class="text" x="400" y="280" text-anchor="middle" font-size="20">Roof</text>
+    <text class="text" x="350" y="360" font-size="16">Windows</text>
+    <text class="text" x="410" y="540" text-anchor="middle" font-size="16">Door</text>
+    <text class="text" x="555" y="160" font-size="14">Chimney</text>
     
-    <text class="label-text" x="155" y="625" text-anchor="middle" fill="#333" font-size="16">Bushes</text>
-    <text class="label-text" x="155" y="740" text-anchor="middle" fill="#666" font-size="18">Flower Bed</text>
-    <text class="label-text" x="850" y="550" text-anchor="middle" fill="#333" font-size="16">Bush</text>
-    <text class="label-text" x="880" y="750" text-anchor="middle" fill="#666" font-size="18">Flowers</text>
+    <text class="text" x="155" y="625" text-anchor="middle" font-size="16">Bushes</text>
+    <text class="text" x="155" y="740" text-anchor="middle" font-size="18">Flower Bed</text>
+    <text class="text" x="850" y="550" text-anchor="middle" font-size="16">Bush</text>
+    <text class="text" x="880" y="750" text-anchor="middle" font-size="18">Flowers</text>
     
-    <text class="label-text" x="50" y="390" fill="#666" font-size="16">Fence</text>
+    <text class="text" x="50" y="390" font-size="16">Fence</text>
   </g>
 </svg>
