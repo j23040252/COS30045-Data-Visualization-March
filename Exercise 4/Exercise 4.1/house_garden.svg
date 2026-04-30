@@ -118,22 +118,22 @@
     <rect class="brown-light" x="525" y="200" width="25" height="100"/>
   </g>
 
-  <!-- GARDEN - BUSHES (Circles and Ellipses with transform) -->
+  <!-- GARDEN - BUSHES-->
+  <!-- It looks similar to clouds, I change colour, coordinate and size -->
   <g id="bushes">
     <!-- Left bush -->
-    <g transform="translate(150, 550)">
-      <ellipse class="dark-green" cx="0" cy="0" rx="40" ry="50"/>
-      <circle class="dark-green" cx="-30" cy="10" r="35"/>
-      <circle class="dark-green" cx="30" cy="10" r="35"/>
-    </g>
-    
+    <ellipse class="dark-green" cx="120" cy="560" rx="45" ry="35"/>
+    <ellipse class="dark-green" cx="180" cy="560" rx="45" ry="35"/>
+    <ellipse class="dark-green" cx="150" cy="545" rx="45" ry="45"/>
+
     <!-- Right bush -->
-    <g transform="translate(750, 500)">
-      <circle class="dark-green" cx="0" cy="0" r="50"/>
-      <circle class="dark-green" cx="-35" cy="20" r="40"/>
-      <circle class="dark-green" cx="35" cy="20" r="40"/>
-      <circle class="dark-green" cx="0" cy="40" r="35"/>
-    </g>
+    <ellipse class="dark-green" cx="725" cy="585" rx="60" ry="50"/>
+    <ellipse class="dark-green" cx="695" cy="590" rx="50" ry="40"/>
+    <ellipse class="dark-green" cx="765" cy="590" rx="50" ry="40"/>
+
+    <ellipse class="dark-green" cx="795" cy="735" rx="60" ry="50"/>
+    <ellipse class="dark-green" cx="765" cy="740" rx="50" ry="40"/>
+    <ellipse class="dark-green" cx="835" cy="740" rx="50" ry="40"/>
   </g>
 
   <!-- FLOWER BED 1 - LEFT (Group with Transformations) -->
