@@ -3,19 +3,19 @@
   <defs>
     <style>
       /* BACKGROUNDS */
-      .sky { fill: #E0F6FF; }
+      .sky { fill: #9FD3FF; }
       .grass { fill: #90EE90; }
       
       /* FILL COLORS (reusable) */
       .gold { fill: #FFD700; }
-      .tan { fill: #D2691E; }
+      .dark-orange { fill: #D2691E; }
       .brown { fill: #654321; }
       .brown-light { fill: #A0522D; }
       .dark-red { fill: #8B0000; }
       .red { fill: #FF6347; }
       .pink { fill: #FF69B4; }
       .light-blue { fill: #87CEEB; stroke: #333; stroke-width: 2; }
-      .dark-green { fill: #228B22; stroke: #1a6b1a; stroke-width: 1; }
+      .dark-green { fill: #228B22;}
       .white { fill: #FFFFFF;}
       
       /* STROKE COLORS */
@@ -23,7 +23,7 @@
       .brown-stroke { stroke: #654321; stroke-width: 2; }
       .brown-dark { stroke: #8B4513; stroke-width: 3; }
       .gray-stroke { stroke: #333; stroke-width: 1; }
-      .gray-path { stroke: #D3D3D3; stroke-width: 8; }
+      .gray-path { fill: none; stroke: #8A8F99; stroke-width: 8; stroke-linecap: round; }
       
       /* TEXT */
       .text { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
@@ -47,6 +47,9 @@
     <line class="orange" x1="85" y1="90" x2="65" y2="90" stroke-linecap="round"/> 
     <line class="orange" x1="210" y1="90" x2="230" y2="90" stroke-linecap="round"/>
     <!-- Diagonal rays: Top-left, Top-right, Bottom-left, Bottom-right -->
+
+    <!-- For Top-left and Bottom-right lines, starting point=High one, ending point=Low one
+    For Top-right and Bottom-left lines, starting point=Low one, ending point=High -->
     <line class="orange" x1="100" y1="50" x2="85" y2="35" stroke-linecap="round"/>
     <line class="orange" x1="200" y1="50" x2="215" y2="35" stroke-linecap="round"/>
     <line class="orange" x1="100" y1="130" x2="85" y2="145" stroke-linecap="round"/>
@@ -55,26 +58,38 @@
 
   <!-- CLOUDS (Ellipses) -->
   <g id="clouds" opacity="0.8"> <!--opacity : set transparency -->
+    <!-- ellipse is similar to circle, instead of radius, it have rx and ry -->
+    <!-- rx: extends ? pixels to the left & right of x  -->
+    <!-- ry: extends ? pixels above & below y -->
     <ellipse class="white" cx="800" cy="60" rx="50" ry="30"/>
     <ellipse class="white" cx="840" cy="70" rx="45" ry="25"/>
     <ellipse class="white" cx="760" cy="75" rx="40" ry="20"/>
     
-    <ellipse class="white" cx="100" cy="200" rx="55" ry="35"/>
-    <ellipse class="white" cx="150" cy="210" rx="50" ry="30"/>
+    <ellipse class="white" cx="450" cy="100" rx="55" ry="35"/>
+    <ellipse class="white" cx="500" cy="100" rx="50" ry="30"/>
+
+    <ellipse class="white" cx="700" cy="180" rx="50" ry="30"/>
+    <ellipse class="white" cx="750" cy="190" rx="45" ry="25"/>
+    <ellipse class="white" cx="760" cy="170" rx="40" ry="20"/>
+
+    <ellipse class="white" cx="900" cy="200" rx="45" ry="25"/>
+    <ellipse class="white" cx="950" cy="200" rx="45" ry="20"/>
+    <ellipse class="white" cx="925" cy="190" rx="45" ry="30"/>
   </g>
 
   <!-- GARDEN PATHS (Paths) -->
+  <!-- Path: M= start point, C= Curve with 2 control points, S= Curve with 1 control point  -->
   <g id="garden-paths">
-    <path class="gray-path" d="M 650 400 Q 700 450 750 500 T 850 650"/>
-    <path class="gray-path" d="M 400 500 L 400 700"/>
-    <path class="gray-path" d="M 350 600 L 600 600"/>
+    <path class="gray-path" d="M 515 800 C 375 690 385 610 435 560 S 480 515 445 475"/>
+    <path class="gray-path" d="M 575 800 C 420 690 430 610 480 560 S 520 515 515 500"/>
   </g>
 
   <!-- HOUSE GROUP (Grouping and Transformation) -->
-  <g id="house" transform="translate(0, 0)">
+  <!-- Translate: move the house group 90px to the right, so it is centred -->
+  <g id="house" transform="translate(90, 0)"> 
     
     <!-- Main House Body (Rectangle) -->
-    <rect class="tan" x="250" y="300" width="300" height="200"/>
+    <rect class="dark-orange" x="250" y="300" width="300" height="200"/>
     
     <!-- ROOF (Path - triangle using polygon/path) -->
     <polygon class="dark-red" points="250,300 400,150 550,300"/>
@@ -100,7 +115,7 @@
     <circle class="gold" cx="425" cy="450" r="5"/>
 
     <!-- Chimney (Rectangle with Lines) -->
-    <rect class="brown-light" x="520" y="200" width="25" height="100"/>
+    <rect class="brown-light" x="525" y="200" width="25" height="100"/>
   </g>
 
   <!-- GARDEN - BUSHES (Circles and Ellipses with transform) -->
