@@ -26,7 +26,7 @@
       .gray-path { fill: none; stroke: #8A8F99; stroke-width: 8; stroke-linecap: round; }
       
       /* TEXT */
-      .text { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .text { font-family: Arial, sans-serif; font-weight: bold; fill: #333; }
       .title { font-family: Arial, sans-serif; font-size: 32px; font-weight: bold; fill: #333; }
     </style>
   </defs>
@@ -126,24 +126,101 @@
     <ellipse class="dark-green" cx="180" cy="560" rx="45" ry="35"/>
     <ellipse class="dark-green" cx="150" cy="545" rx="45" ry="45"/>
 
+    <ellipse class="dark-green" cx="240" cy="435" rx="46" ry="40"/>
+    <ellipse class="dark-green" cx="215" cy="445" rx="40" ry="36"/>
+    <ellipse class="dark-green" cx="265" cy="445" rx="40" ry="36"/>
+
     <!-- Right bush -->
     <ellipse class="dark-green" cx="725" cy="585" rx="60" ry="50"/>
     <ellipse class="dark-green" cx="695" cy="590" rx="50" ry="40"/>
     <ellipse class="dark-green" cx="765" cy="590" rx="50" ry="40"/>
 
-    <ellipse class="dark-green" cx="795" cy="735" rx="60" ry="50"/>
-    <ellipse class="dark-green" cx="765" cy="740" rx="50" ry="40"/>
-    <ellipse class="dark-green" cx="835" cy="740" rx="50" ry="40"/>
+    <ellipse class="dark-green" cx="850" cy="435" rx="46" ry="40"/>
+    <ellipse class="dark-green" cx="815" cy="445" rx="40" ry="36"/>
+    <ellipse class="dark-green" cx="865" cy="445" rx="40" ry="36"/>
+
   </g>
 
   <!-- FLOWER BED 1 - LEFT (Group with Transformations) -->
   <g id="flower-bed-1" transform="translate(100, 650)">
-    <!-- Flower 1 with rotation -->
-    <g transform="rotate(0)">
-      <circle class="gold" cx="0" cy="0" r="8"/>
-      <g transform="rotate(0)">
+    <!-- Flower 1 with rotation-->
+    <!-- Leaves-->
+    <ellipse class="dark-green" cx="-8" cy="33" rx="6" ry="10" transform="rotate(-40 -8 28)"/>
+    <ellipse class="dark-green" cx="8" cy="33" rx="6" ry="10" transform="rotate(40 8 28)"/>
+    <!-- Stem -->
+    <line class="brown-stroke" x1="0" y1="0" x2="0" y2="50"/>
+    <!-- Petals-->
+    <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+    <g transform="rotate(72)">
+      <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+    </g>
+    <g transform="rotate(144)">
+      <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+    </g>
+    <g transform="rotate(216)">
+      <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+    </g>
+    <g transform="rotate(288)">
+      <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+    </g>
+    <circle class="white" cx="0" cy="0" r="5"/> <!-- Stigma-->
+
+    <!-- New Flower (beside Flower 1) -->
+      <g transform="translate(60, 0)">
+        <!-- Stem -->
+        <line class="brown-stroke" x1="0" y1="0" x2="0" y2="50"/>
+        <!-- Petals -->
         <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+        <g transform="rotate(72)">
+          <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+        </g>
+        <g transform="rotate(144)">
+          <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+        </g>
+        <g transform="rotate(216)">
+          <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+        </g>
+        <g transform="rotate(288)">
+          <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+        </g>
+        <!-- Center (white) -->
+        <circle class="white" cx="0" cy="0" r="5"/>
+        <!-- Leaves attached to stem -->
+        <ellipse class="dark-green" cx="-8" cy="28" rx="6" ry="12" transform="rotate(-40 -8 28)"/>
+        <ellipse class="dark-green" cx="8" cy="28" rx="6" ry="12" transform="rotate(40 8 28)"/>
       </g>
+  </g>
+
+  <!-- FLOWER BED 2 - RIGHT (Duplicated from left)-->
+  <g id="flower-bed-2" transform="translate(740, 650)">
+    <!-- Flower 1 with rotation-->
+    <!-- Leaves attached to stem (left and right) -->
+    <ellipse class="dark-green" cx="-8" cy="33" rx="6" ry="10" transform="rotate(-40 -8 28)"/>
+    <ellipse class="dark-green" cx="8" cy="33" rx="6" ry="10" transform="rotate(40 8 28)"/>
+    <!-- Stem -->
+    <line class="brown-stroke" x1="0" y1="0" x2="0" y2="50"/>
+    <!-- Petals-->
+    <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+    <g transform="rotate(72)">
+      <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+    </g>
+    <g transform="rotate(144)">
+      <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+    </g>
+    <g transform="rotate(216)">
+      <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+    </g>
+    <g transform="rotate(288)">
+      <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+    </g>
+    <circle class="white" cx="0" cy="0" r="5"/> <!-- Stigma-->
+
+    <!-- New Flower (beside Flower 1) -->
+    <g transform="translate(60, 0)">
+      <!-- Stem -->
+      <line class="brown-stroke" x1="0" y1="0" x2="0" y2="50"/>
+      <!-- Petals -->
+      <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
       <g transform="rotate(72)">
         <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
       </g>
@@ -156,82 +233,12 @@
       <g transform="rotate(288)">
         <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
       </g>
+      <!-- Center (white) -->
+      <circle class="white" cx="0" cy="0" r="5"/>
+      <!-- Leaves attached to stem -->
+      <ellipse class="dark-green" cx="-8" cy="28" rx="6" ry="12" transform="rotate(-40 -8 28)"/>
+      <ellipse class="dark-green" cx="8" cy="28" rx="6" ry="12" transform="rotate(40 8 28)"/>
     </g>
-    
-    <!-- Flower 2 with different position -->
-    <g transform="translate(60, -20) rotate(45)">
-      <circle class="gold" cx="0" cy="0" r="6"/>
-      <g transform="rotate(0)">
-        <ellipse class="pink" cx="0" cy="-12" rx="6" ry="12"/>
-      </g>
-      <g transform="rotate(90)">
-        <ellipse class="pink" cx="0" cy="-12" rx="6" ry="12"/>
-      </g>
-      <g transform="rotate(180)">
-        <ellipse class="pink" cx="0" cy="-12" rx="6" ry="12"/>
-      </g>
-      <g transform="rotate(270)">
-        <ellipse class="pink" cx="0" cy="-12" rx="6" ry="12"/>
-      </g>
-    </g>
-  </g>
-
-  <!-- FLOWER BED 2 - RIGHT (Group with Transformations) -->
-  <g id="flower-bed-2" transform="translate(850, 680)">
-    <!-- Flower 1 -->
-    <g transform="rotate(30)">
-      <circle class="gold" cx="0" cy="0" r="7"/>
-      <g transform="rotate(0)">
-        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
-      </g>
-      <g transform="rotate(60)">
-        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
-      </g>
-      <g transform="rotate(120)">
-        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
-      </g>
-      <g transform="rotate(180)">
-        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
-      </g>
-      <g transform="rotate(240)">
-        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
-      </g>
-      <g transform="rotate(300)">
-        <ellipse class="pink" cx="0" cy="-14" rx="7" ry="14"/>
-      </g>
-    </g>
-    
-    <!-- Flower 2 -->
-    <g transform="translate(-50, 30)">
-      <circle class="red" cx="0" cy="0" r="6"/>
-      <g transform="rotate(0)">
-        <ellipse class="pink" cx="0" cy="-13" rx="6" ry="13"/>
-      </g>
-      <g transform="rotate(72)">
-        <ellipse class="pink" cx="0" cy="-13" rx="6" ry="13"/>
-      </g>
-      <g transform="rotate(144)">
-        <ellipse class="pink" cx="0" cy="-13" rx="6" ry="13"/>
-      </g>
-      <g transform="rotate(216)">
-        <ellipse class="pink" cx="0" cy="-13" rx="6" ry="13"/>
-      </g>
-      <g transform="rotate(288)">
-        <ellipse class="pink" cx="0" cy="-13" rx="6" ry="13"/>
-      </g>
-    </g>
-  </g>
-
-  <!-- DECORATIVE ELEMENTS - Fence (Lines) -->
-  <g id="fence">
-    <line class="brown-dark" x1="50" y1="420" x2="900" y2="420"/>
-    <!-- Fence posts -->
-    <line class="brown-stroke" x1="100" y1="420" x2="100" y2="460"/>
-    <line class="brown-stroke" x1="200" y1="420" x2="200" y2="460"/>
-    <line class="brown-stroke" x1="300" y1="420" x2="300" y2="460"/>
-    <line class="brown-stroke" x1="600" y1="420" x2="600" y2="460"/>
-    <line class="brown-stroke" x1="750" y1="420" x2="750" y2="460"/>
-    <line class="brown-stroke" x1="850" y1="420" x2="850" y2="460"/>
   </g>
 
   <!-- TEXT LABELS -->
@@ -242,19 +249,15 @@
     </text>
     
     <!-- Element labels -->
-    <text class="text" x="120" y="120" font-size="20">Sun</text>
-    <text class="text" x="780" y="130" font-size="20">Clouds</text>
+    <text class="text" x="150" y="95" text-anchor="middle" font-size="20">Sun</text>
+    <text class="text" x="800" y="75" text-anchor="middle" font-size="20">Clouds</text>
     
-    <text class="text" x="400" y="280" text-anchor="middle" font-size="20">Roof</text>
-    <text class="text" x="350" y="360" font-size="16">Windows</text>
-    <text class="text" x="410" y="540" text-anchor="middle" font-size="16">Door</text>
-    <text class="text" x="555" y="160" font-size="14">Chimney</text>
+    <text class="text" x="480" y="280" text-anchor="middle" font-size="20">Roof</text>
+    <text class="text" x="425" y="360" font-size="16">Windows</text>
+    <text class="text" x="420" y="455" text-anchor="middle" font-size="16">Door</text>
+    <text class="text" x="648" y="255" font-size="14">Chimney</text>
     
-    <text class="text" x="155" y="625" text-anchor="middle" font-size="16">Bushes</text>
-    <text class="text" x="155" y="740" text-anchor="middle" font-size="18">Flower Bed</text>
-    <text class="text" x="850" y="550" text-anchor="middle" font-size="16">Bush</text>
-    <text class="text" x="880" y="750" text-anchor="middle" font-size="18">Flowers</text>
-    
-    <text class="text" x="50" y="390" font-size="16">Fence</text>
+    <text class="text" x="150" y="550" text-anchor="middle" font-size="16">Bushes</text>
+    <text class="text" x="130" y="720" text-anchor="middle" font-size="18">Flowers</text>    
   </g>
 </svg>
