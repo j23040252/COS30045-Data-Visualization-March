@@ -94,19 +94,23 @@
     <!-- ROOF (Path - triangle using polygon/path) -->
     <polygon class="dark-red" points="250,300 400,150 550,300"/>
         
-    <!-- WINDOWS (Rectangles with Circle details) -->
-    <g id="window-left">
-      <rect class="light-blue" x="280" y="330" width="50" height="50"/>
-      <!-- Window panes (Lines) -->
-      <line class="gray-stroke" x1="305" y1="330" x2="305" y2="380"/>
-      <line class="gray-stroke" x1="280" y1="355" x2="330" y2="355"/>
-    </g>
-    
-    <g id="window-right">
-      <rect class="light-blue" x="470" y="330" width="50" height="50"/>
-      <!-- Window panes (Lines) -->
-      <line class="gray-stroke" x1="495" y1="330" x2="495" y2="380"/>
-      <line class="gray-stroke" x1="470" y1="355" x2="520" y2="355"/>
+    <!-- WINDOWS: grouped so both using styling and transforms -->
+    <g id="windows">
+      <!-- Left window -->
+      <g class="window" transform="translate(280,330)">
+        <rect class="light-blue" x="0" y="0" width="50" height="50"/>
+        <!-- Window panes (Lines) positioned relative to the rect -->
+        <line class="gray-stroke" x1="25" y1="0" x2="25" y2="50"/>
+        <line class="gray-stroke" x1="0" y1="25" x2="50" y2="25"/>
+      </g>
+
+      <!-- Right window-->
+      <g class="window" transform="translate(470,330)">
+        <rect class="light-blue" x="0" y="0" width="50" height="50"/>
+        <!-- Window panes (Lines) positioned relative to the rect -->
+        <line class="gray-stroke" x1="25" y1="0" x2="25" y2="50"/>
+        <line class="gray-stroke" x1="0" y1="25" x2="50" y2="25"/>
+      </g>
     </g>
     
     <!-- DOOR (Rectangle with Circle knob) -->
