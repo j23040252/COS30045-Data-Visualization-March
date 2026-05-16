@@ -182,4 +182,63 @@ const createBarChart = data => {
 
 
 
+
+// Load a second dataset and create a separate bar chart 
+d3.csv("data/tv_technology.csv", d => {
+  return {
+    Screen_Technology: d.Screen_Tech,
+    count: +d.count
+  };
+}).then(data => {
+  data.sort((a, b) => b.count - a.count);
+  createSecondBarChart(data);
+});
+
+const svg2 = d3.select(".responsive-svg-container")
+  .append("svg")
+    .attr("viewBox", "0 0 500 500")  //reduce height because the data has fewer rows
+    .style("border", "1px solid black")
+    .style("margin-top", "12px");
+    
+const createSecondBarChart = data => {
+  const xScale2 = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.count)])
+    .range([0, 380]);
+
+  const yScale2 = d3.scaleBand()
+    .domain(data.map(d => d.Screen_Technology))
+    .range([0, 500]) //leave some space at bottom
+    .paddingInner(0.2);
+
+  svg2.selectAll("g")
+    .data(data)
+    .join("g")
+    .attr("transform", d => `translate(0, ${yScale2(d.Screen_Technology)})`)
+    .call(g => {
+      g.append("rect")
+        .attr("x", 70)
+        .attr("y", 0)
+        .attr("width", d => xScale2(d.count))
+        .attr("height", yScale2.bandwidth())
+        .attr("fill", "orange");
+
+      g.append("text")
+        .text(d => d.Screen_Technology)
+        .attr("x", 65)
+        .attr("y", 70)
+        .attr("text-anchor", "end")
+        .style("font-family", "sans-serif")
+        .style("font-size", "11px");
+
+      g.append("text")
+        .text(d => d.count)
+        .attr("x", d => 70 + xScale2(d.count) + 4)
+        .attr("y", 70)
+        .style("font-family", "sans-serif")
+        .style("font-size", "10px");
+    });
+};
+
+
+
 //Another Graph
