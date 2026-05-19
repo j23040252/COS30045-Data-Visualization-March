@@ -22,22 +22,43 @@ const defineScalesDonut = data => {
     .range(d3.schemeCategory10); //map each screen technology to a color from schemeCategory10
 };
 
-// // ===== BAR CHART SCALES =====
-// const xScaleBar = d3.scaleBand();
-// const yScaleBar = d3.scaleLinear();
+// ===== BAR CHART SCALES =====
+const xScaleBar = d3.scaleBand(); //function for categorical data
+const yScaleBar = d3.scaleLinear(); //function for numerical data
 
-// const defineScalesBar = data => {
-//   xScaleBar.domain(data.map(d => d.Screen_Technology)).range([0, innerWidth]).padding(0.2);
-//   yScaleBar.domain([0, d3.max(data, d => d.Energy_Consumption)]).range([innerHeight, 0]).nice();
-// };
+const defineScalesBar = data => {
+  xScaleBar
+    .domain(data.map(d => d.Screen_Technology))
+    .range([0, innerWidth]) //set the bar limited from 0 to innerWidth (pixels)
+    .padding(0.2); //add spacing between bars, 20% of the bandwidth on each side
 
-// // ===== LINE CHART SCALES =====
-// const xScaleLine = d3.scaleLinear();
-// const yScaleLine = d3.scaleLinear();
+  yScaleBar
+    .domain([0, d3.max(data, d => d.Energy_Consumption)])
+    .range([innerHeight, 0]) //The range is reversed because y=0 is at the top in SVG
+    .nice(); //round up the values , so no decimal for the ticks on y-axis
+};
 
-// const defineScalesLine = data => {
-//   xScaleLine.domain(d3.extent(data, d => d.Year)).range([0, innerWidth]);
-//   yScaleLine.domain([0, d3.max(data, d => 
-//     Math.max(d.Queensland, d.New_South_Wales, d.Victoria, d.South_Australia, d.Tasmania, d.Snowy)
-//   )]).range([innerHeight, 0]).nice();
-// };
+// ===== LINE CHART SCALES =====
+const xScaleLine = d3.scaleLinear();
+const yScaleLine = d3.scaleLinear();
+const colorScaleLine = d3.scaleOrdinal();
+
+const defineScalesLine = data => {
+  // x: years
+  xScaleLine
+    .domain(d3.extent(data, d => d.Year))
+    .range([0, innerWidth]);
+
+  // y: find max across all state columns
+  const maxY = d3.max(data, d =>
+    Math.max(d.Queensland, d.New_South_Wales, d.Victoria, d.South_Australia, d.Tasmania, d.Snowy)
+  );
+
+  yScaleLine
+    .domain([0, maxY])
+    .range([innerHeight, 0])
+    .nice();
+
+  // color for each state (domain set by caller when needed)
+  colorScaleLine.range(d3.schemeCategory10);
+};
