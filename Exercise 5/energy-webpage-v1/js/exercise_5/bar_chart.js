@@ -13,8 +13,11 @@ const createBarChart = data => {
 		.append("g")
 		.attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    //Use the data to configure the scales rules (formula in math) for the bars
+	//Use the data to configure the scales rules (formula in math) for the bars
 	defineScalesBar(data);
+
+	// local color scale for bars - copy master scale and restrict domain to this data
+	const colorScaleBar = colorScaleDonut.copy().domain(xScaleBar.domain());
 
 	const bars = chart
 		.selectAll("rect")
@@ -24,7 +27,7 @@ const createBarChart = data => {
 		.attr("y", d => yScaleBar(d.Energy_Consumption)) //pass the energy consumption to get the y-coordinate
 		.attr("width", xScaleBar.bandwidth()) //get the width of each bar 
 		.attr("height", d => innerHeight - yScaleBar(d.Energy_Consumption)) //yScale is give value start from the top, so bar height = innerHeight - yScale value
-		.attr("fill", d => colorScaleDonut(d.Screen_Technology)) //reuse the colorScaleDonut to fill the bars with the same color as the donut chart
+		.attr("fill", d => colorScaleBar(d.Screen_Technology)) //use local copy of color scale 
 		.append("title").text(d => `${d.Screen_Technology}: ${d.Energy_Consumption}`); //simple tooltip
 
 	chart
@@ -49,7 +52,7 @@ const createBarChart = data => {
 		.attr("y", innerHeight + 40)
 		.attr("text-anchor", "middle") //text alignement: middle from left and right
 		.style("font-size", "12px")
-		.text("Screen Technology");
+		.text("Screen Technology (For 55 inch TV only)");
 
 	//Labels for y-axis
 	chart
