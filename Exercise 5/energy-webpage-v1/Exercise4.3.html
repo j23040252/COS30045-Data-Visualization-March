@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Appliance Energy Hub</title>
+    <title>Exercise 4.3 - 4.7 | Appliance Energy Hub</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body data-page="about">
+<body data-page="exercise4.3">
     <header class="site-header">
         <a class="logo-button" href="index.html" data-target="home" aria-label="Go to Home page">
             <img src="images/PowerIcon.png" alt="Power logo">
@@ -27,29 +27,21 @@
     </header>
 
     <main class="page-content">
-        <section class="hero">
-            <p class="eyebrow">About This Website</p>
-            <h1>How the website will be used</h1>
-            <p>
-                This website is used for practice and demonstration purposes. It shows a simple multi-page interface that presents placeholder appliance
-                energy information relevant to the Australian market.
-            </p>
+        <section class="storyboard-card">
+            <p class="eyebrow">Exercise 4.3 to 4.7</p>
+            <h2>Interactive D3 Visualization</h2>
+            <div class="responsive-svg-container"></div>
         </section>
+    
+	<footer class="site-footer">
+		<p>(c) <span id="current-year"></span> Ang Boon Pin | GenAI acknowledgement: Code and some content were developed with assistance from GitHub Copilot (GPT-5.3-Codex).</p>
+	</footer>
 
-        <section class="note-panel">
-            <h2>Contact placeholder</h2>
-            <p>
-                Name: Ang Boon Pin<br>
-                Unit: COS30045 Data Visualisation<br>
-                University: INTI Subang<br>
-            </p>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <p>(c) <span id="current-year"></span> Ang Boon Pin | GenAI acknowledgement: Code and some content were developed with assistance from GitHub Copilot (GPT-5.3-Codex).</p>
-    </footer>
-
+	<!-- Calling D3 library and D3.js in order to use D3 -->
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="js/main.js"></script>
     <script src="js/scripts.js"></script>
 </body>
 </html>
+
+
