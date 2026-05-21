@@ -1,0 +1,57 @@
+/* Responsive container of the svg element */
+.responsive-svg-container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+@media screen and (max-width: 596px) {
+  .responsive-svg-container {
+    margin-bottom: 20px;
+  }
+}
+
+.axis-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  fill: #5a3e2b; /* Dark brown */
+}
+
+/* Code based on Dufour and Meeks (2024) */
+
+/* Filter buttons for Exercise 6 */
+#filters_screen { margin: 0.6rem auto 1rem; display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; }
+#filters_screen .filter {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #c9b089;
+  background-color: #fff8e6;
+  color: #2C2418;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, transform 120ms ease;
+}
+#filters_screen .filter:hover { transform: translateY(-2px); background-color: #fff1cc; }
+
+/* Active states use the same colours as the histogram bars */
+#filters_screen .filter.active { color: #fff; border-color: transparent; }
+#filters_screen .filter.all.active { background-color: #7D6744; color: #FFFFFF; }
+#filters_screen .filter.LED.active { background-color: #EBA746; color: #FFFFFF; }
+#filters_screen .filter.LCD.active { background-color: #3CB371; color: #FFFFFF; }
+#filters_screen .filter.OLED.active { background-color: #4A90E2; color: #FFFFFF; }
+
+/* Exercise 6 chart block layout */
+.chart-block--centered {
+  text-align: center;
+}
+
+.chart-block--centered h2 {
+  margin-bottom: 0.9rem;
+}
+
+.chart-block--centered .responsive-svg-container {
+  margin: 0 auto;
+}
+

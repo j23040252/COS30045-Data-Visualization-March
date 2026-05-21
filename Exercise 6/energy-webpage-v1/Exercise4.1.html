@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4.1 - Draw SVGs | Appliance Energy Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="exercise4.1">
+    <header class="site-header">
+        <a class="logo-button" href="index.html" data-target="home" aria-label="Go to Home page">
+            <img src="images/PowerIcon.png" alt="Power logo">
+            <span>Appliance Energy Hub</span>
+        </a>
+
+        <nav class="top-nav" aria-label="Main navigation">
+            <ul class="nav-menu">
+                <li><a class="nav-link" href="index.html" data-target="home">Home</a></li>
+                <li><a class="nav-link" href="televisions.html" data-target="televisions">Televisions</a></li>
+                <li><a class="nav-link" href="about.html" data-target="about">About Us</a></li>
+                <li><a class="nav-link" href="data_story.html" data-target="data_story">Data Story</a></li>
+                <li><a class="nav-link" href="Exercise4.1.html" data-target="exercise4.1">Exercise 4.1</a></li>
+                <li><a class="nav-link" href="Exercise4.3.html" data-target="exercise4.3">Exercise 4.3</a></li>
+                <li><a class="nav-link" href="Exercise5.html" data-target="exercise5">Exercise 5</a></li>
+                <li><a class="nav-link" href="Exercise6.html" data-target="exercise6">Exercise 6</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="storyboard-card">
+            <p class="eyebrow">Exercise 4.1</p>
+            <h2>Annotated SVG</h2>
+            <img class="storyboard-image" src="images/SVG/annotated screenshots.png" alt="Annotated SVG image">
+        </section>
+
+        <section class="storyboard-card">
+            <h2>Customised SVG - House and Garden</h2>
+            <div class="svg-container">
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="1000" height="800">
+                <defs>
+                    <style>
+                        /* BACKGROUNDS */
+                        .sky { fill: #9FD3FF; }
+                        .grass { fill: #90EE90; }
+                        
+                        /* FILL COLORS (reusable) */
+                        .gold { fill: #FFD700; }
+                        .dark-orange { fill: #D2691E; }
+                        .brown { fill: #654321; }
+                        .brown-light { fill: #A0522D; }
+                        .dark-red { fill: #8B0000; }
+                        .red { fill: #FF6347; }
+                        .pink { fill: #FF69B4; }
+                        .light-blue { fill: #87CEEB; stroke: #333; stroke-width: 2; }
+                        .dark-green { fill: #228B22;}
+                        .white { fill: #FFFFFF;}
+                        
+                        /* STROKE COLORS */
+                        .orange { stroke: #FFA500; stroke-width: 4; }
+                        .brown-stroke { stroke: #654321; stroke-width: 2; }
+                        .brown-dark { stroke: #8B4513; stroke-width: 3; }
+                        .gray-stroke { stroke: #333; stroke-width: 1; }
+                        .gray-path { fill: none; stroke: #8A8F99; stroke-width: 8; stroke-linecap: round; }
+                        
+                        /* TEXT */
+                        .text { font-family: Arial, sans-serif; font-weight: bold; fill: #333; }
+                        .title { font-family: Arial, sans-serif; font-size: 32px; font-weight: bold; fill: #333; }
+                    </style>
+                </defs>
+
+                <!-- Background -->
+                <rect class="sky" width="1000" height="400"/>
+                <rect class="grass" y="400" width="1000" height="400"/>
+
+                <!-- SUN (Circle) -->
+                <g id="sun">
+                    <circle class="gold" cx="150" cy="90" r="50"/> <!-- x,y for circle + radius -->
+                    <!-- Sun rays (Lines) -->
+                    <!-- Cardinal rays: Top, Bottom, Left, Right -->
+                    <!--For top and bottom lines, starting point=bottom, ending point=top -->
+                    <!--For left and right lines, starting point=right, ending point=left -->
+                    <line class="orange" x1="150" y1="30" x2="150" y2="10" stroke-linecap="round"/> 
+                    <line class="orange" x1="150" y1="150" x2="150" y2="170" stroke-linecap="round"/>
+                    <line class="orange" x1="85" y1="90" x2="65" y2="90" stroke-linecap="round"/> 
+                    <line class="orange" x1="210" y1="90" x2="230" y2="90" stroke-linecap="round"/>
+                    <!-- Diagonal rays: Top-left, Top-right, Bottom-left, Bottom-right -->
+
+                    <!-- For Top-left and Bottom-right lines, starting point=High one, ending point=Low one
+                    For Top-right and Bottom-left lines, starting point=Low one, ending point=High -->
+                    <line class="orange" x1="100" y1="50" x2="85" y2="35" stroke-linecap="round"/>
+                    <line class="orange" x1="200" y1="50" x2="215" y2="35" stroke-linecap="round"/>
+                    <line class="orange" x1="100" y1="130" x2="85" y2="145" stroke-linecap="round"/>
+                    <line class="orange" x1="200" y1="130" x2="215" y2="145" stroke-linecap="round"/>
+                </g>
+
+                <!-- CLOUDS (Ellipses) -->
+                <g id="clouds" opacity="0.8"> <!--opacity : set transparency -->
+                    <!-- ellipse is similar to circle, instead of radius, it have rx and ry -->
+                    <!-- rx: extends ? pixels to the left & right of x  -->
+                    <!-- ry: extends ? pixels above & below y -->
+                    <ellipse class="white" cx="800" cy="60" rx="50" ry="30"/>
+                    <ellipse class="white" cx="840" cy="70" rx="45" ry="25"/>
+                    <ellipse class="white" cx="760" cy="75" rx="40" ry="20"/>
+                    
+                    <ellipse class="white" cx="450" cy="100" rx="55" ry="35"/>
+                    <ellipse class="white" cx="500" cy="100" rx="50" ry="30"/>
+
+                    <ellipse class="white" cx="700" cy="180" rx="50" ry="30"/>
+                    <ellipse class="white" cx="750" cy="190" rx="45" ry="25"/>
+                    <ellipse class="white" cx="760" cy="170" rx="40" ry="20"/>
+
+                    <ellipse class="white" cx="900" cy="200" rx="45" ry="25"/>
+                    <ellipse class="white" cx="950" cy="200" rx="45" ry="20"/>
+                    <ellipse class="white" cx="925" cy="190" rx="45" ry="30"/>
+                </g>
+
+                <!-- GARDEN PATHS (Paths) -->
+                <!-- Path: M= start point, C= Curve with 2 control points, S= Curve with 1 control point  -->
+                <g id="garden-paths">
+                    <path class="gray-path" d="M 515 800 C 375 690 385 610 435 560 S 480 515 445 475"/>
+                    <path class="gray-path" d="M 575 800 C 420 690 430 610 480 560 S 520 515 515 500"/>
+                </g>
+
+                <!-- HOUSE GROUP (Grouping and Transformation) -->
+                <!-- Translate: move the house group 90px to the right, so it is centred -->
+                <g id="house" transform="translate(90, 0)"> 
+                    
+                    <!-- Main House Body (Rectangle) -->
+                    <rect class="dark-orange" x="250" y="300" width="300" height="200"/>
+                    
+                    <!-- ROOF (Path - triangle using polygon/path) -->
+                    <polygon class="dark-red" points="250,300 400,150 550,300"/>
+                        
+                    <!-- WINDOWS: grouped so both using styling and transforms -->
+                    <g id="windows">
+                    <!-- Left window -->
+                    <g class="window" transform="translate(280,330)">
+                        <rect class="light-blue" x="0" y="0" width="50" height="50"/>
+                        <!-- Window panes (Lines) positioned relative to the rect -->
+                        <line class="gray-stroke" x1="25" y1="0" x2="25" y2="50"/>
+                        <line class="gray-stroke" x1="0" y1="25" x2="50" y2="25"/>
+                    </g>
+
+                    <!-- Right window-->
+                    <g class="window" transform="translate(470,330)">
+                        <rect class="light-blue" x="0" y="0" width="50" height="50"/>
+                        <!-- Window panes (Lines) positioned relative to the rect -->
+                        <line class="gray-stroke" x1="25" y1="0" x2="25" y2="50"/>
+                        <line class="gray-stroke" x1="0" y1="25" x2="50" y2="25"/>
+                    </g>
+                    </g>
+                    
+                    <!-- DOOR (Rectangle with Circle knob) -->
+                    <rect class="brown" x="370" y="400" width="60" height="100"/>
+                    <!-- Door handle (Circle) -->
+                    <circle class="gold" cx="425" cy="450" r="5"/>
+
+                    <!-- Chimney (Rectangle with Lines) -->
+                    <rect class="brown-light" x="525" y="200" width="25" height="100"/>
+                </g>
+
+                <!-- GARDEN - BUSHES-->
+                <!-- It looks similar to clouds, I change colour, coordinate and size -->
+                <g id="bushes">
+                    <!-- Left bush -->
+                    <ellipse class="dark-green" cx="120" cy="560" rx="45" ry="35"/>
+                    <ellipse class="dark-green" cx="180" cy="560" rx="45" ry="35"/>
+                    <ellipse class="dark-green" cx="150" cy="545" rx="45" ry="45"/>
+
+                    <ellipse class="dark-green" cx="240" cy="435" rx="46" ry="40"/>
+                    <ellipse class="dark-green" cx="215" cy="445" rx="40" ry="36"/>
+                    <ellipse class="dark-green" cx="265" cy="445" rx="40" ry="36"/>
+
+                    <!-- Right bush -->
+                    <ellipse class="dark-green" cx="725" cy="585" rx="60" ry="50"/>
+                    <ellipse class="dark-green" cx="695" cy="590" rx="50" ry="40"/>
+                    <ellipse class="dark-green" cx="765" cy="590" rx="50" ry="40"/>
+
+                    <ellipse class="dark-green" cx="850" cy="435" rx="46" ry="40"/>
+                    <ellipse class="dark-green" cx="815" cy="445" rx="40" ry="36"/>
+                    <ellipse class="dark-green" cx="865" cy="445" rx="40" ry="36"/>
+
+                </g>
+
+                <!-- FLOWER (LEFT) -->
+                <g id="flower-left" transform="translate(100, 650)">
+                    <!-- Flower 1 with rotation-->
+                    <!-- Leaves-->
+                    <ellipse class="dark-green" cx="-8" cy="33" rx="6" ry="10" transform="rotate(-40 -8 28)"/>
+                    <ellipse class="dark-green" cx="8" cy="33" rx="6" ry="10" transform="rotate(40 8 28)"/>
+                    <!-- Stem -->
+                    <line class="brown-stroke" x1="0" y1="0" x2="0" y2="50"/>
+                    <!-- Petals-->
+                    <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                    <g transform="rotate(72)">
+                    <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                    </g>
+                    <g transform="rotate(144)">
+                    <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                    </g>
+                    <g transform="rotate(216)">
+                    <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                    </g>
+                    <g transform="rotate(288)">
+                    <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                    </g>
+                    <circle class="white" cx="0" cy="0" r="5"/> <!-- Stigma-->
+
+                    <!-- Second Flower-->
+                    <g transform="translate(60, 0)">
+                        <!-- Stem -->
+                        <line class="brown-stroke" x1="0" y1="0" x2="0" y2="50"/>
+                        <!-- Petals -->
+                        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                        <g transform="rotate(72)">
+                        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                        </g>
+                        <g transform="rotate(144)">
+                        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                        </g>
+                        <g transform="rotate(216)">
+                        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                        </g>
+                        <g transform="rotate(288)">
+                        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                        </g>
+                        <!-- Center (white) -->
+                        <circle class="white" cx="0" cy="0" r="5"/>
+                        <!-- Leaves attached to stem -->
+                        <ellipse class="dark-green" cx="-8" cy="28" rx="6" ry="12" transform="rotate(-40 -8 28)"/>
+                        <ellipse class="dark-green" cx="8" cy="28" rx="6" ry="12" transform="rotate(40 8 28)"/>
+                    </g>
+                </g>
+
+                <!-- FLOWER (RIGHT) -->
+                <g id="flower-right" transform="translate(740, 650)">
+                    <!-- Flower 1 with rotation-->
+                    <!-- Leaves attached to stem (left and right) -->
+                    <ellipse class="dark-green" cx="-8" cy="33" rx="6" ry="10" transform="rotate(-40 -8 28)"/>
+                    <ellipse class="dark-green" cx="8" cy="33" rx="6" ry="10" transform="rotate(40 8 28)"/>
+                    <!-- Stem -->
+                    <line class="brown-stroke" x1="0" y1="0" x2="0" y2="50"/>
+                    <!-- Petals-->
+                    <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                    <g transform="rotate(72)">
+                        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                    </g>
+                    <g transform="rotate(144)">
+                        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                    </g>
+                    <g transform="rotate(216)">
+                        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                    </g>
+                    <g transform="rotate(288)">
+                        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                    </g>
+                    <circle class="white" cx="0" cy="0" r="5"/> <!-- Stigma-->
+
+                    <!-- Second Flower-->
+                    <g transform="translate(60, 0)">
+                        <!-- Stem -->
+                        <line class="brown-stroke" x1="0" y1="0" x2="0" y2="50"/>
+                        <!-- Petals -->
+                        <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                        <g transform="rotate(72)">
+                            <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                        </g>
+                        <g transform="rotate(144)">
+                            <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                        </g>
+                        <g transform="rotate(216)">
+                            <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                        </g>
+                        <g transform="rotate(288)">
+                            <ellipse class="pink" cx="0" cy="-15" rx="8" ry="15"/>
+                        </g>
+                        <!-- Center (white) -->
+                        <circle class="white" cx="0" cy="0" r="5"/>
+                        <!-- Leaves attached to stem -->
+                        <ellipse class="dark-green" cx="-8" cy="28" rx="6" ry="12" transform="rotate(-40 -8 28)"/>
+                        <ellipse class="dark-green" cx="8" cy="28" rx="6" ry="12" transform="rotate(40 8 28)"/>
+                    </g>
+                </g>
+
+                <!-- TEXT LABELS -->
+                <g id="labels">
+                    <!-- Title -->
+                    <text class="title" x="500" y="40" text-anchor="middle">
+                    House and Garden
+                    </text>
+                    
+                    <!-- Element labels -->
+                    <text class="text" x="150" y="95" text-anchor="middle" font-size="20">Sun</text>
+                    <text class="text" x="800" y="75" text-anchor="middle" font-size="20">Clouds</text>
+                    
+                    <text class="text" x="480" y="280" text-anchor="middle" font-size="20">Roof</text>
+                    <text class="text" x="425" y="360" font-size="16">Windows</text>
+                    <text class="text" x="420" y="455" text-anchor="middle" font-size="16">Door</text>
+                    <text class="text" x="648" y="255" font-size="14">Chimney</text>
+                    
+                    <text class="text" x="150" y="550" text-anchor="middle" font-size="16">Bushes</text>
+                    <text class="text" x="130" y="720" text-anchor="middle" font-size="18">Flowers</text>    
+                </g>
+                </svg>
+            </div>
+        </section>
+
+        <section class="storyboard-card">
+            <h2>Screenshot of the SVG and the DOM </h2>
+            <img class="storyboard-image" src="images/SVG/SVG and DOM.png" alt="SVG and DOM image">
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>(c) <span id="current-year"></span> Ang Boon Pin | GenAI acknowledgement: Code and some content were developed with assistance from GitHub Copilot (GPT-5.3-Codex).</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
+
