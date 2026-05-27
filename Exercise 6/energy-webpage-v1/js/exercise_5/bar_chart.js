@@ -16,7 +16,9 @@ const createBarChart = data => {
 	//Use the data to configure the scales rules (formula in math) for the bars
 	defineScalesBar(data);
 
-	// local color scale for bars - copy master scale and restrict domain to this data
+	//copy the color scale and set the domain to the categories in the bar chart (screen technologies)
+	//this way we can use the same color scheme for the bars as the donut chart, 
+	// and they will be consistent even if the order of categories is different
 	const colorScaleBar = colorScaleDonut.copy().domain(xScaleBar.domain());
 
 	const bars = chart

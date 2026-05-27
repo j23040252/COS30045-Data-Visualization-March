@@ -17,3 +17,8 @@ const bodyBackgroundColor = "#fffaf0";
 // set up the scales
 const xScale = d3.scaleLinear();
 const yScale = d3.scaleLinear();
+
+// color scale mapping screen technology to colors
+const colorScale = d3.scaleOrdinal()
+	.domain(["LED", "LCD", "OLED", "all"])
+	.range([ledColor, lcdColor, oledColor, allColor]);

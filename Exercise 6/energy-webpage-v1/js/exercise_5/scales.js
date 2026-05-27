@@ -52,7 +52,7 @@ const defineScalesLine = data => {
     .domain(d3.extent(data, d => d.Year)) //extent: get the min and max of the years in array
     .range([0, innerWidth]);
 
-  // use Math.max tofind max for all state columns
+  // use Math.max to find max for all state columns
   // then use d3.max to get the highest value among them
   const maxY = d3.max(data, d =>
     Math.max(d.Queensland, d.New_South_Wales, d.Victoria, d.South_Australia, d.Tasmania, d.Snowy)

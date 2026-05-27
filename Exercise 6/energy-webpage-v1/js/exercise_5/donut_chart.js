@@ -23,7 +23,9 @@ const createDonutChart = data => {
 
 	//d3.pie : convert data to angles,pass in the energy consumption values, disable sorting
 	const pie = d3.pie().value(d => d.Energy_Consumption).sort(null);
-	//d3.arc : function to draw arcs, innerRadius: the radius of the hole in the middle, outerRadius: the radius of the entire circle
+	//d3.arc : function to draw arcs, innerRadius: the radius of the hole in the middle, 
+	//outerRadius: the radius of the entire circle
+	//innerRadius is 55% of the radius to create a donut shape, outerRadius is the full radius
 	const arc = d3.arc().innerRadius(radius * 0.55).outerRadius(radius);
 
 

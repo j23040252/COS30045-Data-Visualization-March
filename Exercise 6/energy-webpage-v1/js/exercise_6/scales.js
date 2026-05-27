@@ -1,6 +1,5 @@
-/* Configure scales based on computed bins. Call this after bins are generated. */
 function updateScales(bins) {
-    const maxEng = bins[bins.length - 1].x1; // upper bound of the last bin
+    const maxEng = bins[bins.length - 1].x1; // to get the maximum number for last range
     const binsMaxLength = d3.max(bins, d => d.length); // Get the maximum length of the bins
 
     xScale
@@ -13,3 +12,14 @@ function updateScales(bins) {
         .nice(); // Use the nice() method to round the y-axis values
 }
 
+
+const defineScalesScatter = data => {
+  xScale
+    .domain([0, d3.max(data, d => d.star)])
+    .range([0, innerWidth])
+    .nice();
+  yScale
+    .domain([0, d3.max(data, d => d.energyConsumption)])
+    .range([innerHeight, 0])
+    .nice();
+};

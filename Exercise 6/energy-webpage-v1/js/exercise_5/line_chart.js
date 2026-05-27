@@ -30,7 +30,7 @@ const createLineChart = data => {
 
   //Why need series: 
   //1. raw data is used year as the row. 
-  //2. Without series, the line shows the value of same state across different years
+  //2. Without series, the line shows the value of different state in the same years
   
   //the series variable have two loops:
   //1. Outer loop: Loop between each state
@@ -96,15 +96,14 @@ const createLineChart = data => {
     .selectAll("g")
     .style("cursor", "pointer") // change cursor to pointer when hover on legend items
     .on("click", function (event, d) {
-      if (event.stopPropagation) event.stopPropagation();
       if (selectedState === d) {
-        selectedState = null;
+        selectedState = null; // if click the same legend item again, deselect it
         chart.selectAll("path.line").attr("stroke-opacity", 1);
       } else {
         selectedState = d;
         chart
           .selectAll("path.line")
-          .attr("stroke-opacity", line => (line.id === d ? 1 : 0.15));
+          .attr("stroke-opacity", line => (line.id === d ? 1 : 0.15)); //highlight the selected line by setting its opacity to 1
       }
     });
 

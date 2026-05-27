@@ -29,6 +29,7 @@ function createLegend(container, scale, x, y) {
 }
 
 // Horizontal legend (left to right)
+// x, y: the position of the legend, itemSpacing: the spacing between legend items
 function createHorizontalLegend(container, scale, x, y, itemSpacing = 120) {
   const itemWidth = 12; //size of the color box in the legend
 
